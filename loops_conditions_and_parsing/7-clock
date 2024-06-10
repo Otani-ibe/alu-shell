@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
-# Initialize variables
+# Displays the time for 12 horus and 59 minutes.
+# Displays hours from 0 to 12
+# Displays minutes from 1 to 59
+
 hour=0
-minute=1
-# Loop to display time for 12 hours and 59 minutes
-while [ $hour -le 12 ]; do
-    while [ $minute -le 59 ]; do
-        printf "%02d:%02d\n" $hour $minute
-        ((minute++))
-    done
-    ((hour++))
-    minute=0
-done | head -n 70
+
+while [ $hour -le 12 ]
+do
+  echo "Hour: $hour"
+  minute=1
+  while [ $minute -le 59 ]
+  do
+    echo "$minute"
+    (( minute++ ))
+  done
+  (( hour++ ))
+done
 
